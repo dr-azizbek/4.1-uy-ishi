@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <button onclick="one(6)">1-vazifa</button>
+    <button onclick="two(`Azizbek`)">2-vazifa</button>
+    <button onclick="three(160, 60)">3-vazifa</button>
+    <button onclick="four([`hello`, `what`, `is`, `up`, `dude`])">4-vazifa</button>
+    <button onclick="five()">5-vazifa</button>
+
+
+
+    <script>
+
+        function two(a) {
+            console.log(`Salom, ${a}`)
+        }
+
+
+
+        function one(a) {
+            let resul = a * a
+            console.log(`${a} sonining kvadrati: `+resul)
+        }
+
+
+        function three(boy, vazn) {
+            let minB = 160
+            let minV = 60
+            if (boy >= minB && vazn >= minV && boy - vazn <= 110) {
+                console.log(`Siz sog'lomsiz`)
+            }
+            else {
+                console.log(`Siz o'z ustinggizda ishlashinggiz kerak`)
+            }
+        }
+
+
+
+
+        function four(a) {
+            for (b = 0; b < a.length; b++) {
+                let len = []
+                len.push(a[b].length)
+                console.log(len)
+            }
+
+        }
+
+
+        function five() {
+            person = {
+                name: "Abdurrahmon",
+                phone: "+998 99 841-85-81",
+                birthDate: "12.18.2000",
+                createdDate: "06-07-2010",
+                bonus: 10000,
+
+                height: 178,
+                weight: 70,
+
+                getAge() {
+                    const birthYear = new Date(this.birthDate).getFullYear()
+                    const thisYear = new Date().getFullYear()
+
+                    return thisYear - birthYear
+                },
+                isHealthy() {
+                    if (this.height >= 160 && this.weight >= 60 && this.height - this.weight <= 110) {
+                        console.log(`Sog'lom`)
+                    }
+                    else {
+                        console.log(`Sog'lom emas`)
+                    }
+                },
+
+                getBalance() {
+                    console.log(this.getAge() * 25000+` so'm`)
+                }
+            }
+            let aaa = person.getAge()
+            console.log(`Yoshi:${aaa}`)
+            let result2 = person.isHealthy()
+            console.log(result2)
+            let result3 = person.getBalance()
+            console.log(result3 )
+        }
+
+
+
+    </script>
+</body>
+
+</html>
